@@ -11140,7 +11140,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20180715031943406" modified="20180830150144261" title="$:/view">
 <pre>classic</pre>
 </div>
-<div created="20180831092226318" description="test" modified="20180831100730333" tags="Windows" title="Batch Commands" type="text/vnd.tiddlywiki">
+<div created="20180831092226318" description="test" modified="20180907075054503" tags="Windows" title="Batch Commands" type="text/vnd.tiddlywiki">
 <pre>```markdown
 # remove whole directory if exists (replace # with rem on windows)
 IF EXIST &lt;dir&gt; rmdir /S /Q &lt;dir&gt;
@@ -11162,6 +11162,11 @@ c:\windows\system32\wbem\WMIC.exe product where name=&quot;your product name&quo
 
 # update registry 
 regedit /s &lt;your_reg_file.reg&gt;
+
+# for loop list
+for %%x in (x, y, z ) do (
+         echo %%x
+       )
 
 ```</pre>
 </div>
