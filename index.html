@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/palette</li>
@@ -493,6 +495,10 @@ Error message and password prompt
 
 <li>C#</li>
 
+<li>Collaspe Panel Group</li>
+
+<li>Collaspe Panel Group with combobox</li>
+
 <li>Convert Data Types</li>
 
 <li>Create runtime build parameter</li>
@@ -504,6 +510,10 @@ Error message and password prompt
 <li>DateTime</li>
 
 <li>Decorator Demo</li>
+
+<li>Elements</li>
+
+<li>Event</li>
 
 <li>Frontend</li>
 
@@ -521,7 +531,7 @@ Error message and password prompt
 
 <li>Linux</li>
 
-<li>Modal with Form</li>
+<li>Progress Bar</li>
 
 <li>Python</li>
 
@@ -529,11 +539,17 @@ Error message and password prompt
 
 <li>Set Build Name</li>
 
+<li>Simple Modal</li>
+
 <li>String</li>
+
+<li>Table</li>
 
 <li>Tiddlywiki References</li>
 
 <li>TOC</li>
+
+<li>Window Location</li>
 
 <li>Windows</li>
 
@@ -9119,6 +9135,16 @@ Error message and password prompt
 <div created="20180522042918714" modified="20180522042918714" title="$:/DefaultTiddlers">
 <pre>[list[$:/StoryList]]</pre>
 </div>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;Modal with Form 1&quot;
+        }
+    }
+}</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -10140,8 +10166,8 @@ Error message and password prompt
 <div created="20180715032051452" modified="20180715032051452" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.17/index.html/$:/themes/tiddlywiki/tight">
 <pre>yes</pre>
 </div>
-<div created="20180715050144926" modified="20180912011733037" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20180715050144926" modified="20180914064210932" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20180522142937134" modified="20180522144941878" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -10221,7 +10247,7 @@ Error message and password prompt
 <div created="20180715044704755" modified="20180715044704755" title="$:/state/toc/TableOfContents/伤寒论-少阳病-972943814">
 <pre>open</pre>
 </div>
-<div list="[[Modal with Form]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
+<div list="[[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11186,6 +11212,55 @@ for %%x in (x, y, z ) do (
 <pre>&lt;&lt;list-links &quot;[tag[C#]sort[title]]&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20180914062401072" modified="20180914062728418" tags="bootstrap Frontend" title="Collaspe Panel Group" type="text/vnd.tiddlywiki">
+<pre>```xml
+&lt;div class=&quot;panel-group&quot; id=&quot;accordion&quot;&gt;
+                &lt;div class=&quot;panel panel-default&quot;&gt;
+                    &lt;div class=&quot;panel-heading&quot;&gt;
+                        &lt;h4 class=&quot;panel-title&quot;&gt;
+                            &lt;a data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; onclick=&quot;javascript:ttest()&quot;
+                               href=&quot;#collapseOne&quot;&gt;
+                               TEST
+                            &lt;/a&gt;
+                            &lt;select id=&quot;releaseSelector&quot; class=&quot;combobox panel&quot; onchange=&quot;javascript:ttestt()&quot;&gt;&lt;/select&gt;
+                        &lt;/h4&gt;
+                    &lt;/div&gt;
+                    &lt;div id=&quot;collapseOne&quot; class=&quot;panel-collapse collapse&quot;&gt;
+                        &lt;div class=&quot;panel-body&quot;&gt;
+                            &lt;div id=&quot;container-1&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+```</pre>
+</div>
+<div created="20180914062651693" modified="20180914062715774" tags="bootstrap Frontend" title="Collaspe Panel Group with combobox" type="text/vnd.tiddlywiki">
+<pre>```xml
+&lt;div class=&quot;panel-group&quot; id=&quot;accordion&quot;&gt;
+                &lt;div class=&quot;panel panel-default&quot;&gt;
+                    &lt;div class=&quot;panel-heading&quot;&gt;
+                        &lt;h4 class=&quot;panel-title&quot;&gt;
+                            &lt;a data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; href=&quot;#&quot;&gt;
+                               
+                            &lt;/a&gt;
+                            &lt;select id=&quot;firstSelector&quot; class=&quot;combobox panel&quot;&gt;&lt;/select&gt;
+                            &lt;select id=&quot;secondSelector&quot; class=&quot;combobox panel&quot;&gt;&lt;/select&gt;
+                            &lt;button class=&quot;btn btn-default&quot; onclick=&quot;javascript: test();&quot;&gt;
+                                
+                            &lt;/button&gt;
+                        &lt;/h4&gt;
+                    &lt;/div&gt;
+                    &lt;div id=&quot;collapseOne&quot; class=&quot;panel-collapse collapse&quot;&gt;
+                        &lt;div class=&quot;panel-body&quot;&gt;
+                            &lt;div id=&quot;test&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+```</pre>
+</div>
 <div created="20180904092322954" description="test" modified="20180911012325176" tags="C#" title="Convert Data Types" type="text/vnd.tiddlywiki">
 <pre>```cpp
 
@@ -11300,6 +11375,29 @@ def hello2(name):
     return f&quot;hello: {name}&quot;
 
 print(hello2(&quot;2-----me again again&quot;))
+```</pre>
+</div>
+<div created="20180914063153939" modified="20180914064253398" tags="JQuery JavaScript Frontend" title="Elements" type="text/vnd.tiddlywiki">
+<pre>```javascript
+// get value from an element by its id
+var content = $(&quot;#id&quot;)[0].value;
+        $(&quot;#id&quot;).attr(&quot;style&quot;, &quot;width:&quot; + str);
+        $(&quot;#id&quot;)[0].innerText = str;
+
+// Create Element
+        var root = document.createElement(&quot;div&quot;);
+        root.setAttribute(&quot;class&quot;, &quot;panel panel-default&quot;)
+        var node = document.createElement(&quot;div&quot;);
+        node.setAttribute(&quot;class&quot;, &quot;panel-heading&quot;);
+        node.innerText = &quot;Hi #i&quot;;
+        root.appendChild(node);
+```</pre>
+</div>
+<div created="20180914063815926" modified="20180914063844782" tags="JQuery JavaScript Frontend" title="Event" type="text/vnd.tiddlywiki">
+<pre>```javascript
+// get source object when the event is triggered
+
+        var srcObj = event.srcElement ? event.srcElement : event.target;
 ```</pre>
 </div>
 <div created="20180912011658724" modified="20180912011713886" tags="TableOfContents" title="Frontend">
@@ -11448,35 +11546,13 @@ IQUERYABLE&lt;T&gt;
 <pre>&lt;&lt;list-links &quot;[tag[Linux]sort[title]]&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20180912011720643" modified="20180913034359065" tags="bootstrap Frontend" title="Modal with Form" type="text/vnd.tiddlywiki">
-<pre>```css
-&lt;div class=&quot;modal fade&quot; id=&quot;test-container&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
-    &lt;div class=&quot;modal-dialog&quot;&gt;
-        &lt;div class=&quot;modal-content&quot; style=&quot;width:1200px;position:absolute;top:50%;left:50%;transform:translate(-50%,20%)&quot;&gt;
-            &lt;div class=&quot;modal-header&quot;&gt;
-                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot; onclick=&quot;javascript: test();&quot;&gt;X&lt;/button&gt;
-                &lt;h4 class=&quot;modal-title&quot; id=&quot;myModalLabel&quot;&gt;
-                   TEST
-                &lt;/h4&gt;
+<div created="20180914062805636" modified="20180914064705504" tags="bootstrap Frontend" title="Progress Bar" type="text/vnd.tiddlywiki">
+<pre>```xml
+&lt;div class=&quot;progress progress-striped active&quot;&gt;
+                &lt;div id=&quot;progress&quot; class=&quot;progress-bar progress-success&quot;&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div&gt;
-                &lt;table class=&quot;table&quot; style=&quot;margin-bottom: 0px&quot;&gt;
-                    &lt;thead&gt;
-                        &lt;tr&gt;
-                            &lt;th&gt;NAME&lt;/th&gt;
-                            &lt;th&gt;LOC&lt;/th&gt;
-                            &lt;th&gt;WHY&lt;/th&gt;
-                        &lt;/tr&gt;
-                    &lt;/thead&gt;
-                    &lt;tbody id=&quot;test-table-body&quot;&gt;&lt;/tbody&gt;
-                &lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;modal-footer&quot;&gt;
-                &lt;button type=&quot;button&quot; onclick=&quot;javascript: test();&quot;&gt;submit&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+
 
 ```</pre>
 </div>
@@ -11525,6 +11601,29 @@ Set Build Name e.g. #${BUILD_NUMBER} on ${NODE_NAME} - ${ENV,var=&quot;your buil
 
 ```</pre>
 </div>
+<div created="20180912011720643" modified="20180914063015179" tags="bootstrap Frontend" title="Simple Modal" type="text/vnd.tiddlywiki">
+<pre>```xml
+&lt;div class=&quot;modal fade&quot; id=&quot;dialog&quot; role=&quot;dialog&quot; aria-labelledby=&quot;Label&quot; aria-hidden=&quot;false&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;X&lt;/button&gt;
+                &lt;h4 class=&quot;modal-title&quot; id=&quot;Label&quot;&gt;
+                    
+                &lt;/h4&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;textarea id=&quot;Content&quot; class=&quot;form-control&quot; style=&quot;width:100%&quot; placeholder=&quot;&quot;&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-dismiss=&quot;modal&quot; onclick=&quot;javascript: test()&quot;&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+```</pre>
+</div>
 <div created="20180911012100819" description="test" modified="20180911012114270" tags="C#" title="String" type="text/vnd.tiddlywiki">
 <pre>```cpp
 
@@ -11532,6 +11631,21 @@ using System;
 
 string longStr = @&quot;this is a 
                             long string in two lines&quot;;
+```</pre>
+</div>
+<div created="20180914063046670" modified="20180914063108160" tags="bootstrap Frontend" title="Table" type="text/vnd.tiddlywiki">
+<pre>```xml
+&lt;table class=&quot;table&quot; style=&quot;margin-bottom: 0px&quot;&gt;
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;&lt;/th&gt;
+                            &lt;th&gt;&lt;/th&gt;
+                            &lt;th&gt;&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody id=&quot;taskmanager-table-body&quot;&gt;&lt;/tbody&gt;
+                &lt;/table&gt;
+
 ```</pre>
 </div>
 <div created="20180715033911512" modified="20180715080942443" tags="TableOfContents tiddlywiki [[cheat sheet]]" title="Tiddlywiki References" type="text/x-markdown">
@@ -11549,6 +11663,12 @@ string longStr = @&quot;this is a
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc-selective-expandable 'TableOfContents' sort[title]&gt;&gt;
 &lt;/div&gt;</pre>
+</div>
+<div created="20180914064024985" modified="20180914064051769" tags="JQuery JavaScript Frontend" title="Window Location" type="text/vnd.tiddlywiki">
+<pre>```javascript
+// get source object when the event is triggered
+window.location =&quot;http://mmmmm&quot;
+```</pre>
 </div>
 <div created="20180831100350982" modified="20180831100404776" tags="TableOfContents" title="Windows">
 <pre>&lt;&lt;list-links &quot;[tag[Windows]sort[title]]&quot;&gt;&gt;
