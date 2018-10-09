@@ -271,6 +271,8 @@ Error message and password prompt
 
 <li>$:/StoryList</li>
 
+<li>$:/temp/advancedsearch</li>
+
 <li>$:/temp/info-plugin</li>
 
 <li>$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.17/index.html/$:/languages/ca-ES</li>
@@ -10247,8 +10249,11 @@ Error message and password prompt
 <div created="20180715044704755" modified="20180715044704755" title="$:/state/toc/TableOfContents/伤寒论-少阳病-972943814">
 <pre>open</pre>
 </div>
-<div list="[[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
+<div list="$:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
 <pre></pre>
+</div>
+<div created="20180926094322314" modified="20180926094322314" title="$:/temp/advancedsearch">
+<pre>rd</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10959,8 +10964,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20180522042733066" modified="20180830150116011" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>high</pre>
 </div>
-<div created="20180715041203826" modified="20180830224501393" title="$:/temp/search">
-<pre>log</pre>
+<div created="20180715041203826" modified="20180926094345509" title="$:/temp/search">
+<pre>rm</pre>
 </div>
 <div created="20180830150118250" modified="20180830150118250" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html" url="https://tiddlywiki.com/library/v5.1.17/index.html">
 <pre>loaded</pre>
@@ -11178,10 +11183,13 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20180715031943406" modified="20180830150144261" title="$:/view">
 <pre>classic</pre>
 </div>
-<div created="20180831092226318" description="test" modified="20180907075054503" tags="Windows" title="Batch Commands" type="text/vnd.tiddlywiki">
+<div created="20180831092226318" description="test" modified="20180926094629187" tags="Windows" title="Batch Commands" type="text/vnd.tiddlywiki">
 <pre>```markdown
 # remove whole directory if exists (replace # with rem on windows)
 IF EXIST &lt;dir&gt; rmdir /S /Q &lt;dir&gt;
+
+# remove file
+del &lt;filename&gt;
 
 # create direcotry if not exists
 IF NOT EXIST &lt;dir&gt; mkdir &lt;dir&gt;
