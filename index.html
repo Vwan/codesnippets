@@ -495,6 +495,10 @@ Error message and password prompt
 
 <li>Batch Commands</li>
 
+<li>Batch Commands - mlink</li>
+
+<li>Batch Commands - taskkill</li>
+
 <li>C#</li>
 
 <li>Collaspe Panel Group</li>
@@ -528,6 +532,8 @@ Error message and password prompt
 <li>Install JDK1.8 On Linux</li>
 
 <li>Jenkins</li>
+
+<li>Jenkins Service - Log On</li>
 
 <li>Keywords</li>
 
@@ -10197,8 +10203,8 @@ Error message and password prompt
 <div created="20180717003705369" modified="20180831092410562" title="$:/state/tab/moresidebar-401116514">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20180522042811533" modified="20180912033039188" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20180522042811533" modified="20181203100520162" title="$:/state/tab/sidebar--1835078512">
+<pre>TOC</pre>
 </div>
 <div created="20180904081724563" modified="20180904081724563" title="$:/state/toc/TableOfContents-C#-972943814">
 <pre>open</pre>
@@ -10251,7 +10257,7 @@ Error message and password prompt
 <div created="20180715044704755" modified="20180715044704755" title="$:/state/toc/TableOfContents/伤寒论-少阳病-972943814">
 <pre>open</pre>
 </div>
-<div list="UIAutomation $:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
+<div list="[[Batch Commands - taskkill]] [[Jenkins Service - Log On]] [[Batch Commands - mlink]] UIAutomation $:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180926094322314" modified="20180926094322314" title="$:/temp/advancedsearch">
@@ -11185,7 +11191,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20180715031943406" modified="20180830150144261" title="$:/view">
 <pre>classic</pre>
 </div>
-<div created="20180831092226318" description="test" modified="20180926094629187" tags="Windows" title="Batch Commands" type="text/vnd.tiddlywiki">
+<div created="20180831092226318" description="test" modified="20181204035133435" tags="Windows" title="Batch Commands" type="text/vnd.tiddlywiki">
 <pre>```markdown
 # remove whole directory if exists (replace # with rem on windows)
 IF EXIST &lt;dir&gt; rmdir /S /Q &lt;dir&gt;
@@ -11216,6 +11222,31 @@ for %%x in (x, y, z ) do (
          echo %%x
        )
 
+# start app and then close it
+start &quot;&quot; /b &quot;c:\g.exe&quot;
+		  timeout /T 10 /nobreak &gt;nul
+		  taskkill /F /IM &quot;g.exe&quot;
+
+# parse command parameter
+if   [%1] NEQ [] (
+	set a=%1
+) else (
+	set a=a.txt
+)
+```</pre>
+</div>
+<div created="20181205013319730" description="test" modified="20181205013349294" tags="Windows" title="Batch Commands - mlink" type="text/vnd.tiddlywiki">
+<pre>```markdown
+# To create a symbolic link named MyDocs from the root directory to the \Users\User1\Documents directory, type:
+
+mklink /d \MyDocs \Users\User1\Documents
+```</pre>
+</div>
+<div created="20181205114509125" description="test" modified="20181205114603131" tags="Windows" title="Batch Commands - taskkill" type="text/vnd.tiddlywiki">
+<pre>```markdown
+# To kill remote process
+
+taskkill /S &lt;remote ip&gt; /U username /P password /F /IM &quot;app.exe&quot; /t 
 ```</pre>
 </div>
 <div created="20180904081239519" modified="20180904081250477" tags="TableOfContents" title="C#">
@@ -11498,6 +11529,12 @@ sudo update-alternatives --config javac
 <div created="20180831093217157" modified="20180831093257876" tags="TableOfContents" title="Jenkins">
 <pre>&lt;&lt;list-links &quot;[tag[Jenkins]sort[title]]&quot;&gt;&gt;
 </pre>
+</div>
+<div created="20181205014848845" description="test" modified="20181205015023722" tags="Jenkins" title="Jenkins Service - Log On" type="text/vnd.tiddlywiki">
+<pre>```markdown
+# Run windows commands like psexec hangs, need to invoke admin access to jenkins service
+go to services.msc, edit Jenkins service using Log On 
+```</pre>
 </div>
 <div created="20180911015016365" description="test" modified="20180911034337754" tags="C#" title="Keywords" type="text/vnd.tiddlywiki">
 <pre>```cpp
