@@ -533,6 +533,10 @@ Error message and password prompt
 
 <li>GIT</li>
 
+<li>Git Commit link to Issue</li>
+
+<li>Git Config</li>
+
 <li>Groovy</li>
 
 <li>Ignore already commited files</li>
@@ -547,13 +551,21 @@ Error message and password prompt
 
 <li>Linux</li>
 
+<li>Mac</li>
+
+<li>OpenGrok</li>
+
 <li>Progress Bar</li>
 
 <li>Python</li>
 
 <li>Read/Update XML File</li>
 
+<li>Remove Not Empty Directory</li>
+
 <li>Set Build Name</li>
+
+<li>Setup OpenGrok Environment On Mac</li>
 
 <li>Simple Modal</li>
 
@@ -10186,7 +10198,7 @@ Error message and password prompt
 <div created="20180715032051452" modified="20180715032051452" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.17/index.html/$:/themes/tiddlywiki/tight">
 <pre>yes</pre>
 </div>
-<div created="20180715050144926" modified="20180914064210932" title="$:/state/showeditpreview">
+<div created="20180715050144926" modified="20190110232231100" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
 <div created="20180522142937134" modified="20180522144941878" title="$:/state/sidebar">
@@ -10270,7 +10282,7 @@ Error message and password prompt
 <div created="20180715044704755" modified="20180715044704755" title="$:/state/toc/TableOfContents/伤寒论-少阳病-972943814">
 <pre>open</pre>
 </div>
-<div list="$:/Import [[Ignore already commited files]] [[Sparse Checkout a specific folder from remote repository]] GIT [[Batch Commands - net user]] [[Batch Commands - taskkill]] [[Jenkins Service - Log On]] [[Batch Commands - mlink]] UIAutomation $:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
+<div list="[[Git Commit link to Issue]] [[Git Config]] [[Remove Not Empty Directory]] Mac [[Setup OpenGrok Environment On Mac]] OpenGrok $:/Import [[Ignore already commited files]] [[Sparse Checkout a specific folder from remote repository]] GIT [[Batch Commands - net user]] [[Batch Commands - taskkill]] [[Jenkins Service - Log On]] [[Batch Commands - mlink]] UIAutomation $:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180926094322314" modified="20180926094322314" title="$:/temp/advancedsearch">
@@ -10985,8 +10997,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20180522042733066" modified="20180830150116011" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>high</pre>
 </div>
-<div created="20180715041203826" modified="20180926094345509" title="$:/temp/search">
-<pre>rm</pre>
+<div created="20180715041203826" modified="20190109123102402" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20180830150118250" modified="20180830150118250" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html" url="https://tiddlywiki.com/library/v5.1.17/index.html">
 <pre>loaded</pre>
@@ -11510,6 +11522,63 @@ use below if to traverse the root folder and its sub folders
 <pre>&lt;&lt;list-links &quot;[tag[GIT]sort[title]]&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20190111010616102" description="test" modified="20190111010654264" tags="GIT" title="Git Commit link to Issue" type="text/vnd.tiddlywiki">
+<pre>```
+[Autolinked references and URLs - User Documentation](https://help.github.com/articles/autolinked-references-and-urls/)
+
+just include issue number e.g. #23
+
+```</pre>
+</div>
+<div created="20190110091832626" description="test" modified="20190111010348266" tags="GIT" title="Git Config" type="text/vnd.tiddlywiki">
+<pre>```
+
+git config -l
+
+# display locale specific texts
+git config --global core.quotepath false
+
+# git commit multiple lines using external editor
+
+core.editor=subl -w
+commit.template=/Users/editor/.gitmessage.txt
+
+then when you run &quot;git commit&quot;, the sublime editor will appear
+
+sample .gitmessage.txt as below:
+
+# Subject line (try to keep under 50 characters)
+#
+# Multi-linSummarize changes in around 50 characters or less
+#
+# More detailed explanatory text, if necessary. Wrap it to about 72
+# characters or so. In some contexts, the first line is treated as the
+# subject of the commit and the rest of the text as the body. The
+# blank line separating the summary from the body is critical (unless
+# you omit the body entirely); various tools like `log`, `shortlog`
+# and `rebase` can get confused if you run the two together.
+#
+# Explain the problem that this commit is solving. Focus on why you
+# are making this change as opposed to how (the code explains that).
+# Are there side effects or other unintuitive consequences of this
+# change? Here's the place to explain them.
+#
+# Further paragraphs come after blank lines.
+#
+# - Bullet points are okay, too
+#
+# - Typically a hyphen or asterisk is used for the bullet, preceded
+#   by a single space, with blank lines in between, but conventions
+#   vary here
+#
+# If you use an issue tracker, put references to them at the bottom,
+# like this:
+#
+# Resolves: #123
+# See also: #456, #789
+
+```</pre>
+</div>
 <div created="20180831094919328" modified="20180831094939726" tags="Jenkins" title="Groovy">
 <pre>&lt;&lt;list-links &quot;[tag[Groovy]sort[title]]&quot;&gt;&gt;
 </pre>
@@ -11634,6 +11703,14 @@ IQUERYABLE&lt;T&gt;
 <pre>&lt;&lt;list-links &quot;[tag[Linux]sort[title]]&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20190109141102774" modified="20190109141111554" tags="TableOfContents" title="Mac">
+<pre>&lt;&lt;list-links &quot;[tag[Mac]sort[title]]&quot;&gt;&gt;
+</pre>
+</div>
+<div created="20190109123110041" modified="20190109123124732" tags="TableOfContents" title="OpenGrok">
+<pre>&lt;&lt;list-links &quot;[tag[OpenGrok]sort[title]]&quot;&gt;&gt;
+</pre>
+</div>
 <div created="20180914062805636" modified="20180914064705504" tags="bootstrap Frontend" title="Progress Bar" type="text/vnd.tiddlywiki">
 <pre>```xml
 &lt;div class=&quot;progress progress-striped active&quot;&gt;
@@ -11680,6 +11757,16 @@ node.ParentNode.RemoveChild(node);
 xmlDoc.Save(filepath);
 ```</pre>
 </div>
+<div created="20190109141117352" description="test" modified="20190109141215714" tags="Mac" title="Remove Not Empty Directory" type="text/vnd.tiddlywiki">
+<pre>```
+rm -rvf /path/to/directory  
+
+-r = remove directories and their contents recursively
+-v = explain what is being done
+-f = ignore nonexistent files, never prompt
+
+```</pre>
+</div>
 <div created="20180831092951115" description="test" modified="20180831093503697" tags="Jenkins" title="Set Build Name" type="text/vnd.tiddlywiki">
 <pre>```markdown
 # Install build-name-setter plugin
@@ -11688,6 +11775,106 @@ xmlDoc.Save(filepath);
 Set Build Name e.g. #${BUILD_NUMBER} on ${NODE_NAME} - ${ENV,var=&quot;your build variable&quot;}
 
 ```</pre>
+</div>
+<div created="20190109123132474" description="test" modified="20190111000645349" tags="OpenGrok" title="Setup OpenGrok Environment On Mac" type="text/x-markdown">
+<pre>## Install JDK 1.8 or above
+## Install ctags
+[universal-ctags/ctags: A maintained ctags implementation](https://github.com/universal-ctags/ctags)
+
+for Mac: [Building on Mac OS — Universal Ctags 0.3.0 documentation](http://docs.ctags.io/en/latest/osx.html)
+
+brew unlink ctags
+
+brew tap universal-ctags/universal-ctags
+brew install --HEAD universal-ctags
+or brew reinstall universal-ctags
+
+Fail with &quot;Din't find Universal Ctags&quot; error when indexing later
+
+Try:
+```
+git clone https://github.com/universal-ctags/ctags.git
+cd ctags
+./autogen.sh 
+./configure
+make
+sudo make install
+```
+
+then when indexing, specific ```-c ~/ctags/ctags```, bingo~
+
+## Install OpenGrok
+
+### build from source
+```
+[{OpenGrok by OpenGrok](http://oracle.github.io/opengrok/)
+
+[How to setup OpenGrok · oracle/opengrok Wiki](https://github.com/oracle/opengrok/wiki/How-to-setup-OpenGrok)
+
+brew install maven
+
+git clone https://github.com/oracle/OpenGrok
+
+mvn clean compile
+
+TODO
+```
+
+### install from binary
+```
+download from [Releases · oracle/opengrok](https://github.com/oracle/opengrok/releases)
+
+cd opengrok-1.1.2\lib
+
+there should be a source.war file
+
+```
+
+## Install Tomcat
+[Apache Tomcat® - Apache Tomcat 8 Software Downloads](https://tomcat.apache.org/download-80.cgi)
+
+move to the downloaded folder
+
+cd \bin
+
+./startup.sh
+
+go to http://localhost:8000
+
+## Install OpenGrok on Tomcat
+modify conf/tomcat-users.xml to add a user:
+
+&lt;role rolename=&quot;manager-gui&quot;/&gt;
+&lt;user username=&quot;tomcat&quot; password=&quot;s3cret&quot; roles=&quot;manager-gui&quot;/&gt;
+
+go to Manage App, deploy OpenGrok from source.war
+http://localhost:8080/source/
+
+modify WEB_INF/web.xml
+
+
+## Configure OpenGrok
+cd opengrok-1.1.2
+
+mkdir etc
+
+cd etc
+
+echo &quot;&quot; &gt; configuration.xml
+
+This configuration file will be created by the indexer when using the -W option and the web application reads the file on startup - this is a way how to make the configuration persistent.
+
+## Create Index
+
+java -jar ~/opengrok/lib/opengrok.jar -P -S -v -s ~/opengrok/src -c ~/ctags/ctags -d ~/opengrok/data -I *.java -I *.c -I *.h -I *.cpp -W ~/opengrok/etc/configuration.xml
+
+## TODO
+- fix error: Configuration not configured
+[error:&quot;dataRoot parameter is not set in configuration.xml!&quot; · Issue #863 · oracle/opengrok](https://github.com/oracle/opengrok/issues/863)
+
+## ChangeLog
+2019-01-11 1h16m
+2019-01-09 1h30m</pre>
 </div>
 <div created="20180912011720643" modified="20180914063015179" tags="bootstrap Frontend" title="Simple Modal" type="text/vnd.tiddlywiki">
 <pre>```xml
