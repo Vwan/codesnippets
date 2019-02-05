@@ -521,6 +521,8 @@ Error message and password prompt
 
 <li>Decorator Demo</li>
 
+<li>Doxygen - 源码DOC生成工具</li>
+
 <li>Elements</li>
 
 <li>Event</li>
@@ -559,6 +561,8 @@ Error message and password prompt
 
 <li>Python</li>
 
+<li>Read file and then write it</li>
+
 <li>Read/Update XML File</li>
 
 <li>Remove Not Empty Directory</li>
@@ -586,6 +590,8 @@ Error message and password prompt
 <li>Windows</li>
 
 <li>Write Jenkins build parameter value to file</li>
+
+<li>全局文档、代码内容搜索</li>
 
 </ul>
 </p>
@@ -10198,7 +10204,7 @@ Error message and password prompt
 <div created="20180715032051452" modified="20180715032051452" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.17/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.17/index.html/$:/themes/tiddlywiki/tight">
 <pre>yes</pre>
 </div>
-<div created="20180715050144926" modified="20190110232231100" title="$:/state/showeditpreview">
+<div created="20180715050144926" modified="20190117040233234" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
 <div created="20180522142937134" modified="20180522144941878" title="$:/state/sidebar">
@@ -10282,7 +10288,7 @@ Error message and password prompt
 <div created="20180715044704755" modified="20180715044704755" title="$:/state/toc/TableOfContents/伤寒论-少阳病-972943814">
 <pre>open</pre>
 </div>
-<div list="[[Git Commit link to Issue]] [[Git Config]] [[Remove Not Empty Directory]] Mac [[Setup OpenGrok Environment On Mac]] OpenGrok $:/Import [[Ignore already commited files]] [[Sparse Checkout a specific folder from remote repository]] GIT [[Batch Commands - net user]] [[Batch Commands - taskkill]] [[Jenkins Service - Log On]] [[Batch Commands - mlink]] UIAutomation $:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
+<div list="[[Doxygen - 源码DOC生成工具]] 全局文档、代码内容搜索 [[Read file and then write it]] [[Git Commit link to Issue]] [[Git Config]] [[Remove Not Empty Directory]] Mac [[Setup OpenGrok Environment On Mac]] OpenGrok [[Ignore already commited files]] [[Sparse Checkout a specific folder from remote repository]] GIT [[Batch Commands - net user]] [[Batch Commands - taskkill]] [[Jenkins Service - Log On]] [[Batch Commands - mlink]] UIAutomation $:/AdvancedSearch [[Window Location]] Event Elements Table [[Progress Bar]] [[Collaspe Panel Group with combobox]] [[Collaspe Panel Group]] [[Simple Modal]] Frontend Database Keywords String DateTime [[Get List of Files from Directory]] [[Convert Data Types]] [[Read/Update XML File]] $:/plugins/tiddlywiki/highlight [[Create XML File]] C# [[Create runtime build parameter]] Windows [[Get all online nodes]] Groovy [[Write Jenkins build parameter value to file]] Python Jenkins Linux [[Set Build Name]] [[Batch Commands]] [[Install JDK1.8 On Linux]] [[Decorator Demo]] TOC [[Tiddlywiki References]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180926094322314" modified="20180926094322314" title="$:/temp/advancedsearch">
@@ -11450,6 +11456,10 @@ def hello2(name):
 print(hello2(&quot;2-----me again again&quot;))
 ```</pre>
 </div>
+<div created="20190205120956453" description="test" modified="20190205121142645" tags="[[Source Code Doc]]" title="Doxygen - 源码DOC生成工具" type="text/x-markdown">
+<pre>## [Doxygen: Main Page](http://doxygen.nl/)
+配合 Graphviz</pre>
+</div>
 <div created="20180914063153939" modified="20180914064253398" tags="JQuery JavaScript Frontend" title="Elements" type="text/vnd.tiddlywiki">
 <pre>```javascript
 // get value from an element by its id
@@ -11725,6 +11735,17 @@ IQUERYABLE&lt;T&gt;
 <pre>&lt;&lt;list-links &quot;[tag[Python]sort[title]]&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20190119031545106" description="test" modified="20190119033401807" tags="Python" title="Read file and then write it">
+<pre>```python
+contents = f.readlines()
+    for index, content in enumerate(contents):
+        contents[index] = replace(content, &quot;%&quot;, &quot;\n%\n&quot;)
+    print(contents)
+    f.writelines(contents)
+```
+
+Note: mode set to &quot;r+&quot;, 不过结果是append, 不是rewrite</pre>
+</div>
 <div created="20180904081834084" description="test" modified="20180904091955471" tags="C#" title="Read/Update XML File" type="text/vnd.tiddlywiki">
 <pre>```cpp
 
@@ -11776,7 +11797,7 @@ Set Build Name e.g. #${BUILD_NUMBER} on ${NODE_NAME} - ${ENV,var=&quot;your buil
 
 ```</pre>
 </div>
-<div created="20190109123132474" description="test" modified="20190111000645349" tags="OpenGrok" title="Setup OpenGrok Environment On Mac" type="text/x-markdown">
+<div created="20190109123132474" description="test" modified="20190131152918405" tags="OpenGrok" title="Setup OpenGrok Environment On Mac" type="text/x-markdown">
 <pre>## Install JDK 1.8 or above
 ## Install ctags
 [universal-ctags/ctags: A maintained ctags implementation](https://github.com/universal-ctags/ctags)
@@ -11850,7 +11871,15 @@ modify conf/tomcat-users.xml to add a user:
 go to Manage App, deploy OpenGrok from source.war
 http://localhost:8080/source/
 
-modify WEB_INF/web.xml
+modify WEB_INF/web.xml, (make sure do not use ~, use /Users/ instead )
+
+```
+&lt;context-param&gt;
+        &lt;description&gt;Full path to the configuration file where OpenGrok can read its configuration&lt;/description&gt;
+        &lt;param-name&gt;CONFIGURATION&lt;/param-name&gt;
+        &lt;param-value&gt;/Users/name/opengrok/etc/configuration.xml&lt;/param-value&gt;
+    &lt;/context-param&gt;
+```
 
 
 ## Configure OpenGrok
@@ -11868,11 +11897,44 @@ This configuration file will be created by the indexer when using the -W option 
 
 java -jar ~/opengrok/lib/opengrok.jar -P -S -v -s ~/opengrok/src -c ~/ctags/ctags -d ~/opengrok/data -I *.java -I *.c -I *.h -I *.cpp -W ~/opengrok/etc/configuration.xml
 
+
+## Visit OpenGrok site
+
+## Source Root for multiple projects
+Windows 下建立软链接的方法是使用 mklink /J android D:\sources\android_5.1，Mac OS X 和 Linux 下可以使用 ln -s /path/to/source project_name。
+```ln -s ~/gitlab.com.101camp/py.wiki ./py101wiki```
+
 ## TODO
 - fix error: Configuration not configured
 [error:&quot;dataRoot parameter is not set in configuration.xml!&quot; · Issue #863 · oracle/opengrok](https://github.com/oracle/opengrok/issues/863)
 
+## how to ignore files when indexing
+```
+
+
+The solution is to use the -i flag. The best way to do this is to create a .conf file. For example, I have the following file defined as opengrok.conf:
+
+OPENGROK_APP_SERVER=Tomcat
+OPENGROK_TOMCAT_BASE=/usr/local/Cellar/tomcat/8.0.21/libexec
+OPENGROK_SCAN_DEPTH=4
+OPENGROK_VERBOSE=yes
+OPENGROK_PROGRESS=yes
+IGNORE_PATTERNS=&quot;-i f:foo.txt -i *.bar -i d:target -i d:.tox&quot;
+
+And run the indexing using: OPENGROK_CONFIGURATION=opengrok.conf ./OpenGrok index $SRC_ROOT
+
+It ignores indexing the file foo.txt, all files that match the pattern *.bar, and all files in directories named target or .tox.
+
+Edit credits: mrenaud, pcas
+
+```
+
+```
+java -jar ~/opengrok/lib/opengrok.jar -P -S -v -s ~/opengrok/src -c ~/ctags/ctags -d ~/opengrok/data -W ~/opengrok/etc/configuration.xml -i *.class -i *.pyc -i *.bar -i */target/* -i .tox -i */bin/* -i */lib/* -i */logs* -i */site-packages* -i */.idea/*
+```
+
 ## ChangeLog
+2019-01-31 2h
 2019-01-11 1h16m
 2019-01-09 1h30m</pre>
 </div>
@@ -11991,6 +12053,16 @@ assert newFile.readToString() == build_parameter_value
 
 
 ```</pre>
+</div>
+<div created="20190131141142797" description="test" modified="20190131141454701" tags="OpenGrok" title="全局文档、代码内容搜索" type="text/x-markdown">
+<pre>## [{OpenGrok by OpenGrok](file:///Users/wanjia/NOTES/Scrapbook/data/20190109204644/index.html)
+超快速；
+配置稍麻烦；
+网页端界面方便浏览；
+
+## [DocFetcher - Fast Document Search](http://docfetcher.sourceforge.net/en/index.html)
+
+##</pre>
 </div>
 
 </div>
